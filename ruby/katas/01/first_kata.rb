@@ -10,14 +10,10 @@ class FirstKata
   end
 
   def is_multiple?(number, multiples)
-    multiple = false
-
     multiples.each do |j|
-      if (number % j == 0)
-        multiple = true
-      end
+      return true if (number % j == 0)
     end
 
-    multiple
+    false
   end
 end
