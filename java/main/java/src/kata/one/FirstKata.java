@@ -1,5 +1,7 @@
 package kata.one;
 
+import java.util.List;
+
 /**
  * Created by Eureka.
  * User: ggarcia
@@ -9,15 +11,25 @@ package kata.one;
  * @author ggarcia
  */
 public class FirstKata {
-    public int sum(int upperLimit) {
+    public int sum(int upperLimit, List<Integer> multiples) {
         int sum = 0;
 
         for (int i = 0; i < upperLimit; i++) {
-            if (i % 3 == 0 || i % 5 == 0) {
+            if (isMultiple(i, multiples)) {
                 sum += i;
             }
         }
 
         return sum;
+    }
+
+    public boolean isMultiple(int number, List<Integer> multiples) {
+        for (int multiple : multiples) {
+            if (number % multiple == 0) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
