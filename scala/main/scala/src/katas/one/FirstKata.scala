@@ -1,13 +1,8 @@
 package katas.one
 
 class FirstKata {
-  def sum(upperLimit: Int, multiples: Seq[Int]): Int = upperLimit match {
-    case 0 => 0
-    case x =>
-      if (isMultiple(x, multiples))
-        (x + sum((x - 1), multiples))
-      else
-        sum((x - 1), multiples)
+  def sum(upperLimit: Int, multiples: Seq[Int]): Int = {
+    List.range(1, upperLimit).filter(isMultiple(_, multiples)).foldLeft(0)(_ + _)
   }
 
   def isMultiple(upperLimit: Int, multiples: Seq[Int]): Boolean = {
