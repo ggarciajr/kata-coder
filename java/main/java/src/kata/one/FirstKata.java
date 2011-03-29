@@ -9,10 +9,10 @@ package kata.one;
  * @author ggarcia
  */
 public class FirstKata {
-    public int sum() {
+    public int sum(int upperLimit) {
         int sum = 0;
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < upperLimit; i++) {
             if (i % 3 == 0 || i % 5 == 0) {
                 sum += i;
             }

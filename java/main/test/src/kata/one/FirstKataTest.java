@@ -17,9 +17,15 @@ public class FirstKataTest {
     public void testSum() {
         FirstKata kata = new FirstKata();
         assertEquals(
-                kata.sum(),
+                kata.sum(1000),
                 233168,
                 "result should be 233168"
+        );
+
+        assertEquals(
+                kata.sum(10),
+                23,
+                "result should be 23"
         );
     }
 }
