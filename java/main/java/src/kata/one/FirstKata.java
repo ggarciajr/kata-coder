@@ -1,7 +1,5 @@
 package kata.one;
 
-import java.util.List;
-
 /**
  * Created by Eureka.
  * User: ggarcia
@@ -11,25 +9,18 @@ import java.util.List;
  * @author ggarcia
  */
 public class FirstKata {
-    public int sum(int upperLimit, List<Integer> multiples) {
-        int sum = 0;
-
-        for (int i = 0; i < upperLimit; i++) {
-            if (isMultiple(i, multiples)) {
-                sum += i;
-            }
-        }
-
-        return sum;
+    public long sum(long upperLimit, int firstMultiple, int secondMultiple, int thirdMultiple) {
+        return sumMultiples(upperLimit, firstMultiple)
+                + sumMultiples(upperLimit, secondMultiple)
+                + sumMultiples(upperLimit, thirdMultiple)
+                - sumMultiples(upperLimit, firstMultiple * secondMultiple)
+                - sumMultiples(upperLimit, firstMultiple * thirdMultiple)
+                - sumMultiples(upperLimit, secondMultiple * thirdMultiple)
+                + sumMultiples(upperLimit, firstMultiple * secondMultiple * thirdMultiple);
     }
 
-    public boolean isMultiple(int number, List<Integer> multiples) {
-        for (int multiple : multiples) {
-            if (number % multiple == 0) {
-                return true;
-            }
-        }
-
-        return false;
+    public long sumMultiples(long upperLimit, int multiple) {
+        long n = upperLimit / multiple;
+        return (n * (n + 1) / 2) * multiple;
     }
 }

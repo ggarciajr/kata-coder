@@ -18,33 +18,25 @@ import static org.testng.Assert.assertTrue;
  */
 public class FirstKataTest {
     @Test
-    public void testSum() {
-        List<Integer> multiples = new ArrayList<Integer>();
-        multiples.add(3);
-        multiples.add(5);
-
+    public void tesSumMulti() {
         FirstKata kata = new FirstKata();
-        assertEquals(
-                kata.sum(1000, multiples),
-                233168,
-                "result should be 233168"
-        );
-
-        assertEquals(
-                kata.sum(10, multiples),
-                23,
-                "result should be 23"
-        );
+        assertEquals(kata.sumMultiples(10l, 3), 18, "18");
+        assertEquals(kata.sumMultiples(10l, 5), 15, "15");
     }
 
     @Test
-    public void testIsMultiple() {
+    public void testSum() {
         FirstKata kata = new FirstKata();
-        List<Integer> multiples = new ArrayList<Integer>();
-        multiples.add(3);
-        multiples.add(5);
+        assertEquals(
+                kata.sum(999999999, 3, 5, 7),
+                271428571071428566l,
+                "result should be 233333333166666668l"
+        );
 
-        assertTrue(kata.isMultiple(6, multiples), "2 should be multiple of 6");
-        assertTrue(kata.isMultiple(10, multiples), "2 should be multiple of 6");
+        assertEquals(
+                kata.sum(21, 3, 5, 7),
+                140,
+                "result should be 23"
+        );
     }
 }
