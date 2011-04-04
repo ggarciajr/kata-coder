@@ -1,11 +1,14 @@
 package katas.one
 
 class FirstKata {
-  def sum(upperLimit: Int, multiples: Seq[Int]): Int = {
-    List.range(1, upperLimit).filter(isMultiple(_, multiples)).foldLeft(0)(_ + _)
+  def sum(upperLimit: Long, firstMultiple: Int, secondMultiple: Int): Long = {
+    return (sumMultiples(upperLimit, firstMultiple)
+      + sumMultiples(upperLimit, secondMultiple)
+      - sumMultiples(upperLimit, firstMultiple * secondMultiple))
   }
 
-  def isMultiple(upperLimit: Int, multiples: Seq[Int]): Boolean = {
-    if (multiples.filter(upperLimit % _ == 0).isEmpty) false else true
+  def sumMultiples(upperLimit: Long, multiple: Int): Long = {
+    val n: Long = upperLimit / multiple
+    return (n * (n + 1) / 2) * multiple
   }
 }
