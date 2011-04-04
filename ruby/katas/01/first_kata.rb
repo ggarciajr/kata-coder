@@ -1,19 +1,15 @@
 class FirstKata
-  def sum(upper_limit, multiples)
-    sum = 0
+  def sum(upper_limit, first_multiple, second_multiple)
+    first_sum = sum_multiples(upper_limit, first_multiple)
+    second_sum = sum_multiples(upper_limit, second_multiple)
+    third_sum = sum_multiples(upper_limit, first_multiple * second_multiple)
 
-    upper_limit.to_i.times do |i|
-      sum += i if is_multiple?(i, multiples)
-    end
-
-    sum
+    first_sum + second_sum - third_sum
   end
 
-  def is_multiple?(number, multiples)
-    multiples.each do |j|
-      return true if (number % j == 0)
-    end
+  def sum_multiples(upper_limit, multiple)
+    n = upper_limit / multiple
 
-    false
+    j = (n * (n + 1) / 2) * multiple
   end
 end
