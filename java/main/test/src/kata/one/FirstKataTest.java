@@ -38,5 +38,19 @@ public class FirstKataTest {
                 140,
                 "result should be 23"
         );
+
+        assertEquals(
+                kata.sum(999, 3, 5),
+                233168,
+                "result shoul be 233168"
+        );
+
+        assertEquals(
+                kata.sum(9, 2, 4),
+                24,
+                "result shoul be 24"
+        );
     }
 }
+
+

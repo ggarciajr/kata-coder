@@ -9,6 +9,12 @@ package kata.one;
  * @author ggarcia
  */
 public class FirstKata {
+    public long sum(long upperLimit, int firstMultiple, int secondMultiple) {
+        return sumMultiples(upperLimit, firstMultiple)
+                + sumMultiples(upperLimit, secondMultiple)
+                - sumMultiples(upperLimit, firstMultiple * secondMultiple);
+    }
+
     public long sum(long upperLimit, int firstMultiple, int secondMultiple, int thirdMultiple) {
         return sumMultiples(upperLimit, firstMultiple)
                 + sumMultiples(upperLimit, secondMultiple)
