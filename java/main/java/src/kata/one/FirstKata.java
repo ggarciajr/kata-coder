@@ -4,7 +4,7 @@ package kata.one;
  * Created by Eureka.
  * User: ggarcia
  * Date: 3/29/11
- * Time: 3/29/11
+ * Time: 15:40
  *
  * @author ggarcia
  */

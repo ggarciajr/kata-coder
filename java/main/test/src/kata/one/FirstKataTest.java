@@ -2,17 +2,13 @@ package kata.one;
 
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 /**
  * Created by Eureka.
  * User: ggarcia
  * Date: 3/29/11
- * Time: 3/29/11
+ * Time: 13:48
  *
  * @author ggarcia
  */
