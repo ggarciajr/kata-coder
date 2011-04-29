@@ -18,4 +18,15 @@ public class SecondKataTest {
         SecondKata kata = new SecondKata();
         assertEquals(kata.sum(), 4613732, "4613732");
     }
+
+    @Test
+    public void testWithMath() {
+        SecondKata kata = new SecondKata();
+        assertEquals(kata.sumMath(4000000), 4613732l, "4613732");
+        
+        assertEquals(kata.sumMath(50), 44, "44");
+
+        assertEquals(kata.sumMath(150), 188, "188");
+
+    }
 }
