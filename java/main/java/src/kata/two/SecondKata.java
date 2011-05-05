@@ -9,35 +9,18 @@ package kata.two;
  * @author ggarcia
  */
 public class SecondKata {
-    public long sumMath(double limit) {
-        double phi = (1 + Math.sqrt(5)) / 2;
-        double fibN = Math.floor(Math.log(Math.sqrt(5) * limit)) / Math.log(phi);
-        //double fibN = Math.round(Math.floor(Math.log(Math.sqrt(5) * limit)) / Math.log(phi) + 1.618);
-        fibN = (Math.round(fibN) % 2 == 0) ? Math.ceil(fibN + 0.5) : fibN - (fibN % 3);
-
-        return Math.round((Math.floor(Math.pow(phi, fibN + 2) / Math.sqrt(5) + (1 / 2)) - 1) / 2);
-    }
-
-    public long sum() {
+    public long sum(double limit) {
+        long n = Math.round(((Math.log(limit * Math.sqrt(5))) * 2) + 1.618);
         long sum = 0;
-                            
-        for (int i = 1; i < 1000000; i++) {
-            long fibNum = fib(i);
 
-            if (fibNum > 4000000) {
-                break;
-            }
+        for (long i = 6; i < n; i++) {
+            long fib = (4 * fib(i - 3)) + fib(i - 6);
 
-            if (isEven(fibNum)) {
-                sum += fibNum;
-            }
+            if (fib % 2 == 0)
+                sum += fib;
         }
-        
-        return sum;
-    }
 
-    private boolean isEven(long n) {
-        return (n % 2) == 0;
+        return sum + 2;
     }
 
     private long fib(long n) {

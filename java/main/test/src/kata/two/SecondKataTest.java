@@ -3,6 +3,7 @@ package kata.two;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.fail;
 
 /**
  * Created by Eureka.
@@ -16,17 +17,10 @@ public class SecondKataTest {
     @Test
     public void testSum() {
         SecondKata kata = new SecondKata();
-        assertEquals(kata.sum(), 4613732, "4613732");
-    }
+        assertEquals(kata.sum(4000000), 4613732l, "4613732");
 
-    @Test
-    public void testWithMath() {
-        SecondKata kata = new SecondKata();
-        assertEquals(kata.sumMath(4000000), 4613732l, "4613732");
-        
-        assertEquals(kata.sumMath(50), 44, "44");
+        assertEquals(kata.sum(50), 44, "44");
 
-        assertEquals(kata.sumMath(150), 188, "188");
-
+        assertEquals(kata.sum(150), 188, "188");
     }
 }
