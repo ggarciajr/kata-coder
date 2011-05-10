@@ -1,5 +1,7 @@
 package katas.two
 
+import scala.math._
+
 /**
  * Created by Eureka.
  * User: ggarcia
@@ -9,14 +11,17 @@ package katas.two
  * @author ggarcia
  */
 class SecondKata {
-  var sum:Long = 0;
-
   def sum(limit: Long): Long = {
+    val n: Long = round(((log(limit * sqrt(5))) * 2) + 1.618)
+
     var sum: Long = 0
 
-    (for (i: Long <- 0l to 40l; j = fib(i); if (j < limit) && isEven(j)) yield j).foreach(sum += _)
+    (for (i: Long <- 6l to 40l;
+          j = (4 * fib(i - 3)) + fib(i - 6);
+          if (j < limit) && isEven(j)
+    ) yield j).foreach(sum += _)
 
-    sum
+    sum + 2
   }
 
   def isEven(n: Long): Boolean = {
